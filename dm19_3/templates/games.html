@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'menu.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% block pagename %}
+    <h1><tt>{{ text }}</tt></h1>
+    {% endblock%}
+
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+
+    {% block content %}
+    <ul>
+        {% for game in games %}
+        <li>{{ game.title }} <button class="btn_p"><a action="#" target="_self">{{ pay }}</a> </button> </li>
+        {% endfor %}
+    </ul>
+    <form action="http://127.0.0.1:8000" target="_self"><button class="btn">Вернуться обратно</button> </form>
+    {% endblock %}
+
+</body>
+</html>

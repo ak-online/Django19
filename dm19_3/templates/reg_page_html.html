@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css" integrity="sha512-VNBisELNHh6+nfDjsFXDA6WgXEZm8cfTEcMtfOZdx0XTRoRbr/6Eqb2BjqxF4sNFzdvGIt+WqxKgn0DSfh2kcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<h1>Регистрация</h1>
+    <div class="control-group">
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Введите логин</label>
+        <input type="text" id="username" name="username" maxlength="30" required>
+        <br>
+        <label for="password">Введите пароль</label>
+        <input type="text" id="password" name="password" minlength="8" required>
+        <br>
+        <label for="repeat_password">Повторите пароль</label>
+        <input type="text" id="repeat_password" name="repeat_password" minlength="8" required>
+        <br>
+        <label for="age">Введите свой возраст</label>
+        <input type="text" id="age" name="age" maxlength="3" required>
+        <br>
+        <button type="submit" class="btn btn-info">Регистрация</button>
+        {% if info %}<p>{{ info }}</p>
+        {% endif %}
+    </form></div>
+</body>
+</html>
